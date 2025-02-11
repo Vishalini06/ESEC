@@ -1,0 +1,29 @@
+n=input()
+n=(n.replace(","," ").replace("[","").replace("]","").split())
+h=[int(i) for i in n]
+pre=[]
+st1=[]
+for i in range(len(h)):
+    while st1 and h[st1[-1]]>=h[i]:
+         st1.pop()
+    if st1:
+       pre.append(st1[-1])
+    else:
+       pre.append(-1)
+    st1.append(i)
+nxt=[]
+st2=[]
+for i in range(len(n)-1,-1,-1):
+    while st2 and h[st2[-1]]>=h[i]:
+         st2.pop()
+    if st2:
+       nxt.append(st2[-1])
+    else:
+       nxt.append(len(h))
+    st2.append(i)
+nxt.reverse()
+arr=[]
+for i in range(len(h)):
+    a=h[i]*(nxt[i]-pre[i]-1)
+    arr.append(a)
+print(max(arr))
