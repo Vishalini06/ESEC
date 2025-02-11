@@ -1,0 +1,30 @@
+from operator import itemgetter
+
+m=int(input())
+n=int(input())
+
+d={i:0 for i in range(m)}
+
+pre=[]
+
+for i in range(n):
+   a=input()
+   a=a.replace(",","").replace("[","").replace("]","")
+   arr=[int(i) for i in a.split() if i!=" "]
+   pre.append(arr)
+   for i in arr:
+      d[i]+=1
+    
+sort=sorted(d.items(),key=itemgetter(1),reverse=True) 
+
+unc=set(range(n))
+sel=set()
+
+while unc:
+    item,_ = sort.pop(0)
+    sat={i for i in unc if item in pre[i]}
+    
+    if sat:
+       sel.add(item)
+       unc-=sat
+print(len(sel))       
