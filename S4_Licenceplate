@@ -1,0 +1,19 @@
+from collections import Counter
+a=input()
+s=input().lower().split()
+l=[i.lower() for i in a if i.isalpha()]
+d={i:0 for i in l}
+leng=[len(i) for i in s]
+for i in l:
+   d[i]+=1
+arr=[]   
+for word in s:
+   count=Counter(word)
+   is_valid=True
+   
+   for key,val in d.items():
+       if count.get(key,0)<val:
+           is_valid=False
+   if is_valid:
+      arr.append(word)
+print(min(arr,key=len))
