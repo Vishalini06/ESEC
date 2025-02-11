@@ -1,0 +1,16 @@
+h = [2, 1, 5, 6, 2, 3]
+p = []
+st = []
+
+for i in range(len(h)):
+    while st and h[st[-1]] >= h[i]:
+        st.pop()
+    
+    if st:
+        p.append(st[-1])
+    else:
+        p.append(-1)
+    
+    st.append(i)
+
+print(p)  # Output: [-1, -1, 1, 2, 1, 4]
