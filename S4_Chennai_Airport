@@ -1,0 +1,66 @@
+X, S, R, t, N = map(int, input().split())
+walkways = [tuple(map(int, input().split())) for _ in range(N)]
+
+walkways.sort()
+time_left_to_run = t
+total_time = 0.0
+
+current_position = 0
+segments = []
+
+for Bi, Ei, wi in walkways:
+    if current_position < Bi:
+        segments.append((current_position, Bi, 0))
+    segments.append((Bi, Ei, wi))
+    current_position = Ei
+
+if current_position < X:
+    segments.append((current_position, X, 0))
+
+for start, end, wi in segments:
+    segment_length = end - start
+    walk_speed = S + wi
+    run_speed = R + wi
+    
+    if time_left_to_run > 0:
+        max_run_distance = time_left_to_run * run_speed
+        if max_run_distance >= segment_length:
+            total_time += segment_length / run_speed
+            time_left_to_run -= segment_length / run_speed
+        else:
+            run_time = time_left_to_run
+            run_distance = run_time * run_speed
+            walk_distance = segment_length - run_distance
+            total_time += run_time + (walk_distance / walk_speed)
+            time_left_to_run = 0
+    else:
+        total_time += segment_length / walk_speed
+
+print(f"{total_time:.3f}")
+
+
+
+
+
+
+You're in Chennai airport, standing at point 0. A corridor of length X leads to the gate, where your plane is about to leave. There are moving walkways in the corridor, each moving with some speed wi. When you walk or run on one of those, you move with speed (your speed + wi). The walkways do not change their position; they just make you move faster. The walkways do not overlap: at any given point of the corridor there is at most one walkway, but one walkway can begin at the point where another ends. Your normal walking speed is S. You are worried that you might not catch your plane, though, so you can run a bit - you can run with speed R for at most t seconds in total. You do not have to run for t consecutive seconds: you can split these t seconds into any number of intervals, or even not use some part of them. How long does it take you to get to the gate, assuming you choose when to walk and when to run in order to reach it as soon as possible? 
+
+Input
+Each test case begins with a line containing five integers: 
+X (the length of the corridor, in meters),
+S (your walking speed, in meters per second),
+R (your running speed, in meters per second),
+t (the maximum time you can run, in seconds) and
+N (the number of walkways).
+Each of the next N lines contains three integers: Bi, Ei and wi - the beginning and end of the walkway (in meters from your starting point) and the speed of the walkway (in meters per second).
+Round up your answer to the 3rd decimal point
+Output
+For each test case, output one line containing "y", where y is the time (in seconds) you need to reach point X
+
+For example:
+
+Input	
+12 1 2 4 1
+6 12 1
+Result
+5.500
