@@ -1,0 +1,21 @@
+T = int(input())
+
+for _ in range(T):
+    N = int(input())
+    word_dict = set(input().split())
+    s = input()
+
+    dp = [[] for _ in range(len(s) + 1)]
+    dp[0] = [""]
+
+    for i in range(1, len(s) + 1):
+        for j in range(i):
+            word = s[j:i]
+            if word in word_dict and dp[j]:
+                for sentence in dp[j]:
+                    dp[i].append((sentence + " " + word).strip())
+
+    results = dp[len(s)]
+
+    for sentence in sorted(results):
+        print(sentence)
