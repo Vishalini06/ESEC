@@ -1,0 +1,93 @@
+m, n, r = map(int, input().split())
+matrix = [list(map(int, input().split())) for _ in range(m)]
+
+for layer in range(min(m, n) // 2):
+    elements = []
+    for i in range(layer, n-layer-1): elements.append(matrix[layer][i])
+    for i in range(layer, m-layer-1): elements.append(matrix[i][n-layer-1])
+    for i in range(n-layer-1, layer, -1): elements.append(matrix[m-layer-1][i])
+    for i in range(m-layer-1, layer, -1): elements.append(matrix[i][layer])
+
+    elements = elements[r % len(elements):] + elements[:r % len(elements)]
+
+    idx = 0
+    for i in range(layer, n-layer-1): matrix[layer][i] = elements[idx]; idx += 1
+    for i in range(layer, m-layer-1): matrix[i][n-layer-1] = elements[idx]; idx += 1
+    for i in range(n-layer-1, layer, -1): matrix[m-layer-1][i] = elements[idx]; idx += 1
+    for i in range(m-layer-1, layer, -1): matrix[i][layer] = elements[idx]; idx += 1
+
+for row in matrix:
+    print(" ".join(map(str, row)))
+
+
+
+
+
+
+You are given a 2D matrix, a, of dimension MxN and a positive integer R. You have to  rotate the matrix 
+
+R times and print the resultant matrix. Rotation should be in anti-clockwise direction. 
+
+Rotation of a 4x5 matrix is represented by the following figure. Note that in one rotation, you  have to 
+
+shift elements by one step only (refer sample tests for more clarity).  
+
+a11←a12←a13←a14← a15  
+
+↓ ↑  
+
+a21 a22←a23←a24 a25 
+
+↓ ↓ ↑ ↑  
+
+a31 a32→a33→a34 a35 
+
+↓ ↑  
+
+a41→a42→a43→a44→ a45 
+
+Example: 
+
+First line contains three space separated integers, M,N and R, where M is the number of rows,  N is the 
+
+number of columns in matrix, and R is the number of times the matrix has to be rotated.Then  M lines 
+
+follow, where each line contains N space separated positive integers. These M lines represent  the
+
+matix.In output print rotated matrix. Sample: 
+
+Input: 
+
+4 4 1 
+
+1 2 3 4 
+
+5 6 7 8 
+
+9 10 11 12 
+
+13 14 15 16 
+
+Output: 
+
+2 3 4 8 
+
+1 7 11 12 
+
+5 6 10 16 
+
+9 13 14 15 
+
+Input: 
+
+2 3 2 
+
+1 2 3 
+
+4 5 6 
+
+Output: 
+
+3 6 5 
+
+2 1 4
