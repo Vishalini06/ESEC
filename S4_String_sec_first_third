@@ -1,0 +1,31 @@
+arr=list(map(str,input().split()))
+a=input()
+b=input()
+for i in range(len(arr)):
+   if a==arr[i]:
+      if arr[i+1]==b:
+         print(arr[i+2])
+
+
+
+ Given two strings first and second, consider occurrences in some text of the form "first second third", where second comes immediately after first, and third comes immediately after second.
+
+Return an array of all the words third for each occurrence of "first second third".
+
+For example:
+
+Input
+alice is a good girl she is a good student
+a
+good
+Result
+girl
+student
+
+input
+we will we will rock you
+we
+will
+result
+we
+rock
