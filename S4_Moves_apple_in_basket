@@ -1,0 +1,8 @@
+n=int(input())
+bas=[int(input()) for _ in range(n)]
+t=sum(bas)//n
+m=0
+for app in bas:
+   if app>t:
+     m+=app-t
+print("No of moves =",m)
