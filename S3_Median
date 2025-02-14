@@ -1,0 +1,15 @@
+n = int(input())
+arr = []
+
+for _ in range(n):
+    num = int(input())
+    arr.append(num)
+    arr.sort()
+
+    size = len(arr)
+    if size % 2 == 1:
+        median = arr[size // 2]
+    else:
+        median = (arr[size // 2 - 1] + arr[size // 2]) // 2
+
+    print(median)
