@@ -1,0 +1,73 @@
+expression = input().strip()  # Read input
+
+operands = []  # Stack to store numbers
+operators = []  # Stack to store operators
+
+precedence = {'+': 1, '-': 1, '*': 2, '/': 2}  # Operator precedence
+
+i = 0
+while i < len(expression):
+    char = expression[i]
+
+    if char == ' ':
+        i += 1
+        continue
+
+    if char.isdigit():  # Extract full number
+        num = 0
+        while i < len(expression) and expression[i].isdigit():
+            num = num * 10 + int(expression[i])
+            i += 1
+        operands.append(num)
+        i -= 1  # Adjust index
+
+    elif char == '(':  # Push '(' to operator stack
+        operators.append(char)
+
+    elif char == ')':  # Solve everything inside the parentheses
+        while operators and operators[-1] != '(':
+            b = operands.pop()
+            a = operands.pop()
+            op = operators.pop()
+            if op == '+':
+                operands.append(a + b)
+            elif op == '-':
+                operands.append(a - b)
+            elif op == '*':
+                operands.append(a * b)
+            elif op == '/':
+                operands.append(a // b)  # Integer division
+        operators.pop()  # Remove '('
+
+    else:  # It's an operator (+, -, *, /)
+        while (operators and operators[-1] != '(' and
+               precedence[operators[-1]] >= precedence[char]):
+            b = operands.pop()
+            a = operands.pop()
+            op = operators.pop()
+            if op == '+':
+                operands.append(a + b)
+            elif op == '-':
+                operands.append(a - b)
+            elif op == '*':
+                operands.append(a * b)
+            elif op == '/':
+                operands.append(a // b)
+        operators.append(char)  # Push the current operator
+
+    i += 1
+
+while operators:  # Apply remaining operations
+    b = operands.pop()
+    a = operands.pop()
+    op = operators.pop()
+    if op == '+':
+        operands.append(a + b)
+    elif op == '-':
+        operands.append(a - b)
+    elif op == '*':
+        operands.append(a * b)
+    elif op == '/':
+        operands.append(a // b)
+
+print(operands[-1])  # Print final result
