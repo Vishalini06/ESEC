@@ -1,0 +1,55 @@
+n=int(input())
+arr=list(map(int,input().split()))
+k=int(input())
+a=(arr[-k:]+arr[:-k])
+print(*a)
+
+
+"""
+Rotate an array of N elements
+   if the K is odd --->to the right by K steps  &
+
+   if the k is even---> to the left by k steps.
+
+Example:
+
+sample input 1
+
+N=4
+
+1 2 3 4
+
+k=2
+
+sample output 1
+
+3 4 1 2
+
+ 
+
+sample input 2
+
+N=4
+
+1 2 3 4
+
+k=3
+
+sample output 2
+
+2 3 4 1
+
+ 
+
+For example:
+
+Input	Result
+4
+1 2 3 4
+2
+3 4 1 2
+4
+1 2 3 4
+3
+2 3 4 1
+"""
