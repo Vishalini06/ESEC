@@ -1,0 +1,12 @@
+n=int(input())
+arr=list(map(int,input().split()))
+l=[]
+m=arr[-1]
+l.append(m)
+for i in range(n-2,-1,-1):
+    if arr[i]>m:
+       m=arr[i]
+       l.append(m)
+print(*l[::-1])       
+        
+                                                
