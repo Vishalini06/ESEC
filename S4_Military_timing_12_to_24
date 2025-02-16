@@ -1,0 +1,56 @@
+n=int(input())
+for _ in range(n):
+   t = input()
+   mer="AM"
+   if t[-2:]=="PM":
+      mer="PM"
+      t=t[:-2]
+   h,m,s=map(int,t.split(":"))  
+   if mer=="AM":
+     h=0 if h==12 else h
+   else:
+     h=h if h==12 else h+12
+   print(f"{h:02}:{m:02}:{s:02}")     
+   
+
+
+
+"""
+Given a time in 12-hour AM/PM format, convert it to military (24-hour) time. Note: Midnight is 12:00:00 AM on a 12-hour clock, and 00:00:00 on a 24-hour clock. Noon is 12:00:00 PM on a 12-hour clock, and 12:00:00 on a 24-hour clock.
+
+Input Format
+
+Number of test cases A single string s containing a time in 12-hour clock format (i.e.: hh:mm:ssAM or hh:mm:ssPM ).
+
+Constraints
+
+01<= hh<= 12 00 <= mm, ss <= 59
+
+Output Format
+
+Convert and print the given time in 24-hour format, where 00 <= hh<= 23.
+
+Sample Input 0
+
+1
+10:20:23PM
+Sample Output 0
+
+22:20:23
+
+
+input
+test case = 1
+10:20:23PM
+output
+22:20:23
+
+input
+1
+10:20:23
+output
+10:20:23
+
+
+"""
+   
