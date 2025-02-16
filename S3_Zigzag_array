@@ -1,0 +1,36 @@
+n=int(input())
+arr=[int(input()) for _ in range(n)]
+for i in range(1,len(arr)):
+   if i%2!=0:
+      if arr[i-1]>arr[i]:
+           arr[i-1],arr[i]=arr[i],arr[i-1]
+   if i%2==0:
+      if arr[i-1]<arr[i]:
+          arr[i-1],arr[i]=arr[i],arr[i-1]
+print(arr)      
+   
+
+
+# Take input from user
+arr = list(map(int, input().split()))  
+n = len(arr)
+
+# Process array to follow zig-zag pattern
+for i in range(n - 1):
+    if i % 2 == 0 and arr[i] > arr[i + 1]:  # Ensure arr[i] < arr[i+1] at even indices
+        arr[i], arr[i + 1] = arr[i + 1], arr[i]
+    elif i % 2 == 1 and arr[i] < arr[i + 1]:  # Ensure arr[i] > arr[i+1] at odd indices
+        arr[i], arr[i + 1] = arr[i + 1], arr[i]
+
+# Print result
+print(*arr)
+
+"""
+print the array in zig zag format like
+a<b>c<d>e<f
+
+input
+31 32 33 34 35
+output
+31 33 32 35 34
+"""
