@@ -1,0 +1,22 @@
+s=input()
+p=0
+for i in s:
+    if s.count(i)==1:
+        p=(s.index(i)+1)
+        break
+if p!=0:        
+   print(p) 
+else:
+   print(-1)
+
+
+"""
+input
+itvace
+ttuumm
+output
+1
+-1
+
+print the position of 1st occurence
+"""
