@@ -1,0 +1,10 @@
+s=list(map(str,input().split()))
+print(*[i[::-1] for i in s])
+
+
+INPUT
+REVERSE WORDS IN SENTENCE
+input
+This is a word
+outpur
+sihT si a drow
