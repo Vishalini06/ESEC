@@ -1,0 +1,56 @@
+s = input().strip()
+n = len(s)
+result = -1  
+
+for i in range(n - 25):
+    window = list(s[i:i + 26])
+
+    missing = set("abcdefghijklmnopqrstuvwxyz") - set(window)
+    if window.count("?") >= len(missing):  
+        for j in range(26):
+            if window[j] == "?":
+                window[j] = "a" if j == 0 else (chr(ord(window[j - 1]) + 1) if window[j - 1] != "z" else "a")
+
+        result = s[:i] + "".join(window) + s[i + 26:]
+        break  
+
+print(result)
+
+
+"""
+Sub-string that contains all lowercase alphabets after performing the given operation
+
+Given a string str containing lower case alphabets and character ‘?’. The task is to check if it is possible to make str good or not.
+
+A string is called good if it contains a sub-string of length 26 which has every character of lower case alphabets in it.
+
+The task is to check if it is possible to make the string good by replacing ‘?’ characters with any lower case alphabet. If it is possible then print the modified string otherwise print -1.
+
+Input: str = “abcdefghijkl?nopqrstuvwxy?”
+
+Output: abcdefghijklmnopqrstuvwxyz
+
+Replace first ‘?’ with ‘m’ and second with ‘z’.
+
+Input: str = “abcdefghijklmnopqrstuvwxyz??????”
+
+Output: abcdefghijklmnopqrstuvwxyzaaaaaa
+
+Given string already has a sub-string which contains all the 26 lower case alphabets.
+
+ 
+
+ 
+
+For example:
+
+Input	
+abcdefghijklmnopqrst??yz
+Result
+-1
+
+input 
+abcd??ghijklmnop??????wx?yz
+result 
+abcdefghijklmnopqrstuvwxyyz
+"""
