@@ -1,0 +1,30 @@
+a=input()
+b=input()
+arr=[]
+res=[]
+for i in range(len(a)):
+    arr.append(a.count(a[i]))
+    res.append(b.count(b[i]))
+if arr==res:
+   print("true")
+else:
+   print("false")
+
+
+"""
+input
+egg
+add
+output
+true
+
+input
+foo
+bar
+output
+false
+"""
+    
+       
+    
+    
