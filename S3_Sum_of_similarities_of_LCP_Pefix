@@ -1,0 +1,69 @@
+t=int(input())
+for _ in range(t):
+    s=input().strip()
+    tot=0
+    n=len(s)
+    for i in range(n):
+       j,count=0,0
+       while i+j<n and s[j]==s[i+j]:
+          count+=1
+          j+=1
+       tot+=count
+    print(tot)       
+    
+
+"""
+For two strings A and B, we define the similarity of the strings to be the length of the longest prefix common to both strings. For example, the similarity of strings "abc" and "abd" is 2, while the similarity of strings "aaa" and "aaab" is 3.
+
+Calculate the sum of similarities of a string S with each of it's suffixes.
+
+Input Format
+
+The first line contains the number of test cases t.
+
+Each of the next t lines contains a string to process, s.
+
+Output Format
+
+Output t lines, each containing the answer for the corresponding test case.
+
+Sample Input
+
+2
+
+ababaa  
+
+aa
+
+Sample Output
+
+11  
+
+3
+
+Explanation
+
+For the first case, the suffixes of the string are "ababaa", "babaa", "abaa", "baa", "aa" and "a". The similarities of these strings with the string "ababaa" are 6,0,3,0,1, & 1 respectively. Thus, the answer is 6 + 0 + 3 + 0 + 1 + 1 = 11.
+
+For the second case, the answer is 2 + 1 = 3.
+
+ 
+
+For example:
+
+Input	
+2
+ababaa  
+aa
+Result
+11
+3
+
+input 
+2
+Sample
+sa
+result 
+6
+2
+"""
