@@ -1,0 +1,79 @@
+N = int(input().strip())
+big_matrix = [list(map(int, input().split())) for _ in range(N)]
+
+M = int(input().strip())
+small_matrix = [list(map(int, input().split())) for _ in range(M)]
+
+found = False
+for i in range(N - M + 1):
+    for j in range(N - M + 1):
+        sub_matrix = [row[j:j + M] for row in big_matrix[i:i + M]]
+        if sub_matrix == small_matrix:
+            found = True
+            break
+    if found:
+        break
+
+print("True" if found else "False")
+
+
+"""
+Given bigger NxN matrix and a smaller MxM matrix print TRUE if the smaller matrix can be found in the bigger matrix else print FALSE
+
+Input Format
+
+An NxN Matrix
+
+An MxM Matrix
+
+Output Format
+
+true - if MxM is in NxN
+
+false - if MxM not in NxN
+
+Constraints
+
+M < N
+
+Sample Input 1
+
+3
+1 1 1
+2 2 2
+3 3 3
+2
+1 1 
+2 2
+Sample Output 1
+
+True
+ 
+
+ 
+
+For example:
+
+Input	
+3
+1 1 1
+2 2 2
+3 3 3
+2
+1 1 
+2 2
+Result
+True
+
+input 
+3
+1 2 3
+4 5 6
+7 8 9
+2
+1 3
+7 9
+result 
+False
+
+"""
