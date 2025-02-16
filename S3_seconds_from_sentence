@@ -1,0 +1,8 @@
+s=input().split(":")
+s=[i for i in s if i.isdigit()]
+print(s[-1])
+
+input
+Today the time is 09:11:33: Check it out
+result
+33
