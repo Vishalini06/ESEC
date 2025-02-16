@@ -1,0 +1,89 @@
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    res=[]
+    arr=list(map(int,input().split()))
+    arr.sort()
+    for i in range(len(arr)-1):
+       if arr[i]>arr[i+1]:
+         res.append(arr[i]-arr[i+1])
+       else:
+         res.append(arr[i+1]-arr[i])
+    print(min(res))
+
+
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    res=[]
+    arr=list(map(int,input().split()))
+    arr.sort()
+    m=float('inf')
+    for i in range(len(arr)-1):
+       dif=arr[i+1]-arr[i]
+       if dif < m:
+          m=dif
+    print(m)     
+
+
+
+"""
+Find the Minimum difference pair
+
+Given an unsorted array, find the minimum difference between any pair in given array.
+
+Sample input 1 5 2 4 5 7 9
+
+Sample output 1
+
+Sample input 1 5 0 0 1 2 3
+
+Sample output Invalid value in array!!!
+
+Input Format
+
+The first line of input contains an integer T denoting the number of test cases. The first line of each test case is N, the size of array. Second line of the test case is the Array
+
+Constraints
+
+1 <= T <= 30 1 < N <= 100 1 <= arr[i] <= 100000
+
+Output Format
+
+Print the minimum difference between any two pairs.
+
+Sample Input 0
+
+1
+5
+2 4 5 7 9
+Sample Output 0
+
+1
+ 
+
+ 
+
+For example:
+
+Input
+1
+5
+2 4 5 7 9
+Result
+1
+
+input 
+1
+5
+4 6 9 11 13 
+result 
+2
+
+input 
+1
+6
+100 301 501 709 7878 2343
+result 
+200
+"""
