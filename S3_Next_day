@@ -1,0 +1,32 @@
+d,m,y=map(int,input().split("/"))
+
+leap=(y%400==0)
+if m==2:
+  max_d=29 if leap else 28
+elif m in [4,6,9,11]:
+  max_d=30
+else:
+  max_d=31
+  
+d+=1
+
+if d>max_d:
+  d=1
+  m+=1
+if m>12:
+  m=1
+  y+=1
+print(f"{d:02d}/{m:02d}/{y:02d}")
+
+approach 2:
+
+from datetime import datetime, timedelta
+
+date_str = input()
+
+date_obj = datetime.strptime(date_str, "%d/%m/%Y")
+
+next_day = date_obj + timedelta(days=1)
+
+
+print(next_day.strftime("%d/%m/%Y"))
