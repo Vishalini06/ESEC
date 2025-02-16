@@ -1,0 +1,50 @@
+n=int(input())
+tot=0
+arr=[]
+for _ in range(n):
+   s,num=input().split()
+   arr.append((s,num))
+c=input()
+tot=0
+for s,num in arr:
+    if s[0]==c:
+       tot+=int(num)
+print(tot)       
+      
+
+"""
+
+   Data has been given in the following format
+
+Alpha 10
+Beta 20
+Gamma 30
+Azure 40
+Amedus 10
+Benedict 5
+aroma 3
+
+A letter is given to search. Print the sum of all elements that start with the letter
+For example, if letter given is A, then total should be 10+40+10 = 60 because Alpha, Azure, Amedus start with A. If the letter given is B then answer should be 25
+
+Assume the letter is case sensitive
+
+Input is given in the following format
+Number of names, number pairs (N - Integer)
+Name 1 Number 1
+...
+....
+...
+Name N, Number N
+Letter to search - character input
+
+For example:
+
+Input	Result
+3
+Alpha 10
+Beta 20
+Amadeus 20
+A
+30
+"""
