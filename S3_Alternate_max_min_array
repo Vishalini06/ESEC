@@ -1,0 +1,41 @@
+n=int(input())
+arr=list(map(int,input().split()))
+arr.sort(reverse=True)
+i,j=0,len(arr)-1
+while i<=j:
+   if i!=j:
+     print(arr[i],arr[j],end=" ")
+   else:
+     print(arr[i],end=" ")
+   i+=1
+   j-=1
+
+"""
+Given an array of integers, rearrange the array in such a way that the first element is first maximum and second element is first minimum. Example 
+
+Input : {1, 2, 3, 4, 5, 6, 7} 
+
+Output : {7, 1, 6, 2, 5, 3, 4}
+
+Sample Input 0
+
+5
+1 2 3 4 5
+Sample Output 0
+
+5 1 4 2 3
+ 
+
+ 
+
+For example:
+
+Input	Result
+5
+1 2 3 4 5
+5 1 4 2 3
+5
+100 20 44 73 97
+100 20 97 44 73
+
+"""
