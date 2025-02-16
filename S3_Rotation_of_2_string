@@ -1,0 +1,7 @@
+a=input()
+b=input()
+c=a+a
+if b in c:
+   print(f"{a} and {b} are rotation of each other")
+else:
+   print("Not a rotation of each other")
