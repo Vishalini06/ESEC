@@ -1,0 +1,15 @@
+n=int(input())
+arr=list(map(int,input().split()))
+k=int(input())
+k=k%len(arr)
+print(*arr[-k:]+arr[:-k])
+
+"""
+rotate array to n number of time given to right rotate
+
+input
+87 54 69 47 52 15 16
+9
+output
+15 16 87 54 69 47 52
+"""
