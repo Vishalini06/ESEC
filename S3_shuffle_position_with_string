@@ -1,0 +1,11 @@
+s=input()
+arr=list(map(int,input().split()))
+for i in arr:
+    print(s[i],end="")
+
+
+input
+codeleet
+4 5 6 7 0 1 2 3
+output
+leetcode
