@@ -1,0 +1,32 @@
+n=int(input())
+for i in range(n):
+    s=input()
+    k=int(input())
+    if i%2==0:
+        print(s[k:]+s[:k])
+    else:
+        print(s[-k:]+s[:-k])
+
+"""
+1st left rotate
+next right rotate
+input
+5
+Hello
+1
+Hello
+1
+ITVAC
+2
+ITVAC
+2
+Mercel
+0
+
+output
+elloH
+oHell
+VACIT
+ACITV
+Mercel
+"""
