@@ -1,0 +1,31 @@
+from itertools import combinations
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    arr=list(map(int,input().split()))
+    k=int(input())
+    c=set()
+    for i in range(1,len(arr)+1):
+        com=combinations(arr,i)
+        for comb in com:
+           if sum(comb)==k:
+              c.add(tuple(sorted(comb)))
+  
+    c=sorted(c)
+    if c!=[]:
+       res=''.join(f"({' '.join(map(str,i))})" for i in c)
+       print(res)
+       
+    else:
+      print("Empty")
+
+"""
+Input	
+1
+7
+10 1 2 7 6 1 5
+8
+
+Result
+(1 1 6)(1 2 5)(1 7)(2 6)
+"""
