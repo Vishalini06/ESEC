@@ -25,7 +25,30 @@ Input
 7
 10 1 2 7 6 1 5
 8
-
 Result
 (1 1 6)(1 2 5)(1 7)(2 6)
+"""
+
+
+
+
+n=int(input())
+if n==1:
+   way=1
+elif n==2:
+   way=2
+else:
+   a=1
+   b=2
+   for i in range(3,n+1):
+       cur=a+b
+       a=b
+       b=cur
+   way=b
+print("Number of ways =",way)   
+
+
+
+"""
+There are n stairs, a person standing at the bottom wants to reach the top. The person can climb either 1 stair or 2 stairs at a time. Count the number of ways, the person can reach the top. Sample Input 5 Sample Output Number of ways = 8 For example: Input Result 5 Number of ways = 8
 """
