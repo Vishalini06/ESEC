@@ -1,0 +1,88 @@
+from math import factorial
+n=int(input())
+r=int(input())
+m=int(input())
+f=factorial(n)/(factorial(r)*factorial(n-r))
+print(f%m)
+
+"""
+In his high school, Ross was taught permutations and combinations. He found it very difficult then but now, he has grown fond of it. He likes calculating the different ways of combining certain things, basically a permutation.
+
+As he likes solving these mathematical questions, in each of the questions, he is faced with a challenge of finding out factorials of very large numbers and Ross does not like it.He just wants to be given values and solve the question. So he asked you for help to find out the following:
+
+nCr where n and r are numbers given by Ross to you
+nCr is defined as n! / (r! x (n-r)!)
+Here, n! denotes the factorial of a number.Also, you have to calculate this number as modulo m.
+
+Example 1:
+
+input1: 3
+
+input2: 2
+
+input3: 1000000009
+
+Output : 3
+
+Explanation:
+
+n=3,r=2,m=100 So, n!=3!=6, r!=2!=2, (n-r)!= 1!=1.
+
+So, nCr = (6/(2*1))%1000000009=3.
+
+Example 2:
+
+input1: 5
+
+input2: 2
+
+input3: 1000000009
+
+Output : 10
+
+Explanation:
+
+n=5,r=2,m=100 So, n!=5!=120, r!=2!=2, (n-r)!= 3!=6.
+
+So, nCr = (120/(2*6))%1000000009=10.
+
+ 
+ 
+ 
+Input Format
+
+input 1: The number n.
+
+input 2: The number r.
+
+input 3: The number m.
+
+Output Format
+
+The value of nCr%m
+
+Sample Input
+
+3
+2
+1000000009
+Sample Output
+
+3.0
+ 
+
+ 
+
+For example:
+
+Input	Result
+3
+2
+1000000009
+3.0
+5
+2
+1000000009
+10.0
+"""
+
