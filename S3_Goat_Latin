@@ -1,0 +1,25 @@
+a=input().split()
+arr=[]
+for i in a:
+   if i[0] in 'aeiouAEIOU':
+       arr.append(i+"ma")
+   else:
+      arr.append(i[1::]+i[0]+"ma")
+c=1      
+for i in range(len(arr)):
+    print(arr[i]+("a"*c),end=" ")
+    c+=1
+
+"""
+input
+I speak Goat Latin
+output
+Imaa peaksmaaa oatGmaaaa atinLmaaaaa 
+
+input
+The quick brown fox jumped over the lazy dog
+output
+heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa 
+
+
+   
