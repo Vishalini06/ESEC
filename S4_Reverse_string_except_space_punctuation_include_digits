@@ -1,0 +1,13 @@
+s=list(input())
+chars=[ch for ch in s if ch.isalpha() or ch.isdigit()]
+for i in range(len(s)):
+    if s[i].isalpha() or s[i].isdigit():
+      s[i]=chars.pop()
+print(''.join(s))      
+
+
+"""
+input
+A man, in the boat says : I see 1-2-3 in the sky
+output
+y kse, ht ni3 21ee sIsy : a sta o-b-e ht nin amA
