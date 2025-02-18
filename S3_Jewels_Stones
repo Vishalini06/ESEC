@@ -1,0 +1,19 @@
+jew=input()
+sto=input()
+m=min(len(jew),len(sto))
+c=0
+for i in range(m):
+    c+=(sto.count(jew[i]))
+print(c)    
+
+input
+aA
+aAAAbbb
+output
+3
+
+input
+z
+ZZ
+output
+0
