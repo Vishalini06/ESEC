@@ -1,0 +1,57 @@
+n=int(input())
+a=[int(input()) for _ in range(n)]
+m=0
+for i in range(n-2):
+   for j in range(i+1,n-1):
+      for k in range(j+1,n):
+          if a[i]<a[j]<a[k]:
+              cur=a[i]+a[j]+a[k]
+              if cur>m:
+                m=cur
+print(m)                
+
+
+"""
+ Given an array of positive integers of size n. Find the maximum sum of triplet( ai + aj + ak ) such that
+
+0 <= i < j < k < n and ai < aj < ak.
+
+For Example,
+
+Input: a[] = 2 5 3 1 4 9
+
+Output: 16
+
+Explanation:
+
+All possible triplets are:-
+
+2 3 4 => sum = 9
+
+2 5 9 => sum = 16
+
+2 3 9 => sum = 14
+
+3 4 9 => sum = 16
+
+1 4 9 => sum = 14
+
+Maximum sum = 16
+
+ 
+
+ 
+
+For example:
+
+Input	
+6
+2
+5
+3
+1
+4
+9
+Result
+16
+"""
