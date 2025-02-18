@@ -1,0 +1,9 @@
+t=int(input())
+for _ in range(t):
+    a=input()
+    b=input()
+    c=a+a
+    if b in c:
+        print("true")
+    else:
+        print("false")
