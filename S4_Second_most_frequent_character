@@ -1,0 +1,21 @@
+from collections import Counter
+a=input()
+c=Counter(a)
+d=dict(c)
+sort=sorted(d,key=d.get,reverse=True)  
+if len(d)>1:
+    print("Second most frequent character is",sort[1])
+else:
+   print("No Second most frequent character")
+
+
+input
+aabababa
+output
+b
+
+input
+aaaa
+output
+no second frequent chracter
+    
