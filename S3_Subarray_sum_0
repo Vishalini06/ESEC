@@ -1,0 +1,69 @@
+
+T = int(input())  
+
+for _ in range(T):
+    N = int(input())
+    arr = list(map(int, input().split()))  
+    
+
+    prefix_sums = set()
+    current_sum = 0
+    has_zero_sum_subarray = False
+    
+    for num in arr:
+        current_sum += num
+     
+        if current_sum == 0 or current_sum in prefix_sums:
+            has_zero_sum_subarray = True
+            break
+    
+        prefix_sums.add(current_sum)
+
+    print("true" if has_zero_sum_subarray else "false")
+
+
+"""
+Find if there is a sub array with sum equal to zero
+
+Here you are given an array of positive and negative numbers, find if there is a sub-array of continuous elements with 0 sum.
+
+Input Format
+
+T – Number of test cases N - size of the array 'N' integer values
+
+Constraints
+
+1
+
+Output Format
+
+true - if sum of any sub-array of continuous elements is zero false - otherwise
+
+Sample Input 0
+
+1
+5
+1 2 3 -6 7
+Sample Output 0
+
+true
+ 
+
+ 
+
+For example:
+
+Input	
+1
+6
+1 2 3 -6 7 8
+Result
+true
+
+input
+1
+5
+1 2 3 4 5
+result
+false
+"""
