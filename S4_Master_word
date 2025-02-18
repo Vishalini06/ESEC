@@ -1,0 +1,67 @@
+import re
+s=input()
+x = False
+if  re.search("^[^\d][^AEIOUaeiou]*\d+[AEIOU]+\d+[\[\]{}]$",s):
+     x=True
+num=re.findall(r'[A-Za-z]\d+',s)
+arr=[]
+for i in num:
+    dig=re.findall(r'\d+',i)
+    arr.append(''.join(dig))
+sub=int(arr[0])
+add=int(arr[0])
+for i in range(1,len(arr)):
+   sub-=int(arr[i])
+   add+=int(arr[i])
+if x:
+  print("YES",add)
+else:
+  print("NO",sub)
+    
+ 
+"""
+For a given word check if it is a MASTER word
+
+A master word is a word which follows the following rules:
+
+First character is not a digit
+Second character is not a vowel
+Next there is a number which could be one or more digits (NUM1)
+Next is one or more upper case VOWELS
+Next is a number which has one more digits (NUM2)
+Last character is a [ or { or } or ]
+
+If it matches the above rules print
+YES followed by NUM1+NUM2
+
+If it does not match any of the above rules print
+NO followed by NUM1-NUM2
+
+ 
+
+For example:
+
+Input	
+KW2343E2342[
+Result
+YES 4685
+
+input 
+KE2343E2342[
+output 
+NO 1
+
+input 
+3K23E234[
+output 
+NO -211
+
+input 
+KW17EAIO1{
+YES 18
+"""
+     
+
+  
+
+                                    
