@@ -1,0 +1,30 @@
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    if n==0:
+      print("Invalid Input")
+    c=(n*(n+1))//2
+    for i in range(n,-1,-1):
+        for j in range(i):
+            print(c,end=" ")
+            c-=1
+        print()
+
+input
+3
+output
+6 5 4
+3 2 
+1
+
+input
+2
+output
+3 2
+1
+
+input
+0
+output
+Invalid Input
+        
