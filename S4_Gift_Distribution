@@ -1,0 +1,78 @@
+n=int(input())
+arr=[input() for _ in range(n)]
+g=int(input())
+a=input()
+b=input()
+pos1,pos2=arr.index(a),arr.index(b)
+clock=(arr[(pos1+2)%n]==b)
+c={i:0 for i in arr}
+cur=pos1
+for i in range(g):
+   c[arr[pos1]]+=1
+   cur=(cur+2)%n if clock else (cur-2)%n
+m=max(c,key=c.get)
+d= "Clockwise" if clock else "Anti-clockwise"
+print(d)
+print(m)
+
+input
+Krishna is distributing gifts to a group of kids who are seated in a circle. The gifts are being distributed by skippingt the immediate next person in the seated order of the kids. Write a program that determines who receives the highest number of gifts and in which direction is the gift being distributed. Assume only one kid will receive the highest number of gifts
+
+Input
+
+Number of kids in the group
+
+Names of kids, one after the other
+
+Total number of kids
+
+The names of the first ttwo kids who received the gift
+
+ 
+
+Output
+
+"Clockwise" or "Anti-Clockwise"
+
+Name of kid who received the highest number of gifts
+
+Input:
+
+4
+A
+C
+D
+F
+7
+A
+D
+
+For example:
+
+Input
+4
+A
+C
+D
+F
+7
+A
+D
+Result
+Clockwise
+A
+
+
+input
+5
+A
+B
+C
+D
+E
+11
+A
+D
+Result
+Anti-clockwise
+A
