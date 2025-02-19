@@ -1,0 +1,25 @@
+s=input().strip()
+st=[]
+t=set()
+for i,ch in enumerate(s):
+    if ch=="(":
+        st.append(i)
+
+    elif ch==")":
+        if st:
+            st.pop()
+        else:
+            t.add(i)
+t.update(st)
+print(t)
+res=''.join([char for i,char in enumerate(s) if i not in t])
+print(res)
+
+input
+(((ab)
+(abcd))
+()()((xyz)(abc)
+output
+(ab)
+(abcd)
+()()(xyz)(abc)
