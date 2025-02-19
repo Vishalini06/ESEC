@@ -1,0 +1,72 @@
+t=int(input())
+for _ in range(t):
+   arr=list(map(str,input()))
+   st=[]
+   x=True
+   if arr[0] in '}])':
+      x=False
+   else:      
+      for i in arr:
+         if i in "{[(":
+           st.append(i)
+         else:
+           if st==[]:
+               if i=='}])':
+                   x=False
+                  
+           else:
+              a=st[-1]
+              if a=='{' and i=='}' or a=='[' and i==']' or a=='(' and i==')':
+                  st.pop()                
+   if st or not x:
+      print("False")
+   else:
+      print("True")
+
+
+approach 2:
+t=int(input())
+for _ in range(t):
+   arr=list(map(str,input()))
+   st=[]
+   d={"{":"}","[":"]","(":")"}
+   for i in arr:
+      if i in d.keys():
+          st.append(i)
+      else:
+        if st!=[]:
+           if d[st[-1]]==i:
+              st.pop()
+   if st!=[]:
+      print("False")
+   else:
+      print("True")
+
+"""
+input
+1
+({[]})
+output
+True
+
+input
+1
+)))(((
+output
+False
+
+
+input
+2
+(){}[]
+[(){}]
+output
+False
+True
+
+
+
+            
+                     
+                  
+            
