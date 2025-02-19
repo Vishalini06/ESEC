@@ -1,0 +1,82 @@
+from collections import Counter
+a=int(input())
+b=[int(input()) for i in range(a)]
+c=Counter(b)
+d=[]
+for k,v in c.items():
+    if(v==1):
+        d.append(k)
+if(d):
+    print(d[-1])
+else:
+    print("No unique elements")
+
+
+
+a=int(input())
+b=[int(input()) for i in range(a)]
+d=[]
+for i in range(len(b)):
+    if b.count(b[i])==1:
+        d.append(b[i])
+if(d):
+    print(d[-1])
+else:
+    print("No unique elements")
+
+"""
+ There is an integer array with duplicate elements. Print the unique element which is not repeated. If more than one element is not repeated it should the print least not repeated value.
+
+Input Format
+
+N - size of the array 'N' integer values
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Single integer from the array which is the unique number
+
+ 
+
+ 
+
+For example:
+
+Input	
+9
+1
+2
+3
+1
+2
+3
+4
+2
+3
+Result
+4  
+
+input
+6
+6
+1
+1
+2
+2
+3
+3
+result
+No unique elements
+
+input
+5
+2
+3
+4
+5
+1
+result
+1  
