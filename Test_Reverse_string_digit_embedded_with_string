@@ -1,0 +1,24 @@
+import re
+
+sentence = "I26t is not a digit 1234"
+words = sentence.split()
+result = []
+
+for word in words:
+    letters = [char for char in word if char.isalpha()]
+    reversed_word = ""
+    for char in word:
+        if char.isdigit():
+            reversed_word += char
+        else:
+            reversed_word += letters.pop()
+    result.append(reversed_word.lower())
+
+output = " ".join(result)
+print(output)  
+
+"""
+input
+I26t is not a digit 1234
+output
+t26i si ton a tigid 1234
