@@ -1,0 +1,9 @@
+n = int(input())
+matrix = []
+
+for _ in range(n):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+right_diagonal_sum = sum(matrix[i][i] for i in range(n))
+print(f"addition of right diagonal element is {right_diagonal_sum}")
