@@ -15,6 +15,31 @@ d= "Clockwise" if clock else "Anti-clockwise"
 print(d)
 print(m)
 
+
+approach 2(Santa Claue  Display all children who got maximum gifts):
+n=int(input())
+arr=[input() for _ in range(n)]
+g=int(input())
+a=input()
+b=input()
+pos1,pos2=arr.index(a),arr.index(b)
+clock=(arr[(pos1+2)%n]==b)
+c={i:0 for i in arr}
+cur=pos1
+for i in range(g):
+   c[arr[cur]]+=1
+   cur=(cur+2)%n if clock else (cur-2)%n
+m=max(c.values())
+
+d= "Clockwise" if clock else "Anti-clockwise"
+print(d)
+for key,val in c.items():
+    if val==m:
+        print(key)
+    
+
+
+
 input
 Krishna is distributing gifts to a group of kids who are seated in a circle. The gifts are being distributed by skippingt the immediate next person in the seated order of the kids. Write a program that determines who receives the highest number of gifts and in which direction is the gift being distributed. Assume only one kid will receive the highest number of gifts
 
