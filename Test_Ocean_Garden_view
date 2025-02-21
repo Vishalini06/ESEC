@@ -1,0 +1,57 @@
+n=list(map(int,input().split()))
+oce=[n[-1]]
+gar=[n[0]]
+o=n[-1]
+g=n[0]
+n.reverse()
+for i in range(len(n)):
+    if o<n[i]:
+        oce.append(n[i])
+        o=n[i]
+n.reverse()
+for i in range(len(n)):
+    if g<n[i]:
+        gar.append(n[i])
+        g=n[i]
+oce=sorted(oce,reverse=True)
+print(f"{[n.index(i) for i in oce]}")
+print(f"{[n.index(i) for i in gar]}")
+
+
+"""
+There are n buildings in a line. You are given an integer array heights of size n that represents the heights of the buildings in the line.
+
+The ocean is to the right of the buildings. A building has an ocean view if the building can see the ocean without obstructions. Formally, a building has an ocean view if all the buildings to its right have a smaller height.
+
+The garden is on the left side of the building. a building has a garden view if all the buildings to the left have a smaller view.
+
+Return a list of indices (0-indexed) of buildings that have an ocean view, sorted in increasing order
+
+Return a list of indices (0-indexed) of buildings that have an garden view, sorted in increasing order.
+
+ 
+
+ 
+
+For example:
+
+Input	
+4,2,3,1
+Result
+[0,2,3]
+[0]
+
+
+in python
+input
+4,3,2,1
+result 
+[0,1,2,3]
+[0]
+
+input
+1,2,3,4
+result 
+[3]
+[0,1,2,3]
+"""
