@@ -1,0 +1,71 @@
+import operator
+import math
+n=4
+arr=[25,17,0,18]
+
+d={i:0 for i in arr}
+for i in range(len(arr)):
+    if math.isqrt(arr[i])**2==arr[i] and arr[i]!=0:
+        d[arr[i]]+=5
+    if arr[i]%4==0 and arr[i]%6==0 and arr[i]!=0:
+        d[arr[i]]+=4
+    if arr[i]%2==0 and arr[i]!=0:
+        d[arr[i]]+=3
+s=sorted(d.items(),key=operator.itemgetter(1,0))
+m=[i[0] for i in s]
+if 0 in m:
+    a=[i for i in m if i!=0]
+    b=[i for i in m if i==0]
+    c=a+b
+    print(c)
+else:
+    print(m)
+
+
+"""
+ Given a set of numbers like we want to find sum of weights based on the following conditions
+
+1. 5 if a perfect square
+
+2. 4 if multiple of 4 and divisible by 6
+
+3. 3 if even number
+
+And sort the numbers based on the weight and print it as follows , Should display the numbers based on increasing order. If two numbers have the same weighted score, then the lowest of the two number is displayed first
+
+Explanation
+
+Weighted score of 25 = 5 (perfect square), 16 = 5+3,24 = 4+3, 21 = 0, 19=0
+
+The increasing order would be 19,21,25,24,16
+
+ 
+ 
+ 
+Sample Input
+
+4
+
+ 
+
+25 17 0 18
+ Sample Output
+
+ 
+
+17 18 25 0
+ 
+
+ 
+
+ 
+
+ 
+
+For example:
+
+Input	Result
+4
+25 17 0 18
+17 18 25 0
+""
