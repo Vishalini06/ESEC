@@ -1,0 +1,24 @@
+from datetime import datetime
+h=input()
+m=input()
+s=input()
+p=input()
+t=f"{h}:{m}:{s} {p}"
+m=datetime.strptime(t,"%I:%M:%S %p").strftime("%hi:%mi:%se")
+print(m)
+
+input
+10
+55
+24
+pm
+output
+22:55:24
+
+input
+8
+10
+15
+am
+output
+08:10:15
