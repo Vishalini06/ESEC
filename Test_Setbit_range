@@ -1,0 +1,47 @@
+n=42
+l,r=2,5
+b=(bin(n)[2:])
+c=[i for i in b[::-1]]
+d=0
+for i in range(l,r):
+    if "1" == c[i]:
+        d+=1
+print(d)    
+
+
+doubt
+Count set bits in a range 
+Given a non-negative number n and two values I and r. The problem is to count the number of set bits in the range I to r in the binary representation of n, ie, to count set bits from the rightmost Ith bit to the rightmost rth bit. 
+Constraint: 
+1 <= 1 <= r <= number of bits in the binary representation of n. 
+Examples: 
+Input: n = 42 l = 2 r = 5 
+Output: 2 
+(42)10 (101010)2 
+There are '2' set bits in the range 2 to 5. 
+Input: n = 79 l = 1 r = 4 
+Output: 4 
+For example: 
+Input 
+42
+2 5
+Result 
+2
+
+input
+68
+2 5
+result
+1
+
+input
+4
+1 2
+result
+0
+
+input
+79
+1 4
+result
+4
