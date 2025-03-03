@@ -1,0 +1,15 @@
+for _ in range(int(input())):
+    n, h = int(input()), list(map(int, input().split()))
+    l, r, lm, rm, water = 0, n - 1, 0, 0, 0
+
+    while l < r:
+        if h[l] < h[r]:
+            lm = max(lm, h[l])
+            water += lm - h[l]
+            l += 1
+        else:
+            rm = max(rm, h[r])
+            water += rm - h[r]
+            r -= 1
+
+    print(water)
